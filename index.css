@@ -39,7 +39,7 @@ header h2 {
 /* Game Instructions */
 h2 {
     font-size: 22px;
-    margin: 20px 0;
+    margin: 10px 0;
     font-weight: normal;
 }
 
@@ -71,7 +71,6 @@ h2 {
 /* Game Status */
 p[data-testid="gameStatus"] {
     font-size: 18px;
-    margin: 20px 0;
     font-weight: bold;
     animation: fadeInOut 1s ease-in-out;
 }
@@ -92,6 +91,8 @@ p[data-testid="score"] {
 .status {
     display: flex;
     flex-direction: row;
+    margin-top: -30px;
+    justify-content: space-between;
 }
 /* Button for New Game */
 button {
