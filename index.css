@@ -1,0 +1,123 @@
+/* General Styles */
+body {
+    background-color: rgba(29, 27, 27, 0.877);
+    color: #fff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;  /* Stack elements vertically */
+    height: 100vh;
+    overflow: hidden;  /* Prevent scrolling */
+    text-align: center;
+}
+
+/* Header */
+header {
+    background-color: #333;
+    padding: 20px 0;
+    width: 100%;
+}
+
+header h2 {
+    font-size: 32px;
+    margin: 0;
+}
+
+/* Color Box */
+.box {
+    height: 200px;
+    width: 200px;
+    border: 5px solid #fff;
+    margin: 0 auto 20px;
+    background-color: #ccc; /* Default color */
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Game Instructions */
+h2 {
+    font-size: 22px;
+    margin: 20px 0;
+    font-weight: normal;
+}
+
+/* Color Options Grid */
+#color-options {
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    max-width: 400px;  /* Constrained width to fit screen */
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+/* Option Buttons */
+.options {
+    height: 90px;
+    width: 90px;
+    border: 3px solid #fff;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.options:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+}
+
+/* Game Status */
+p[data-testid="gameStatus"] {
+    font-size: 18px;
+    margin: 20px 0;
+    font-weight: bold;
+    animation: fadeInOut 1s ease-in-out;
+}
+
+.correct {
+    color: #28A745; /* Green for correct */
+}
+
+.wrong {
+    color: #E63946; /* Red for wrong */
+}
+
+/* Score Display */
+p[data-testid="score"] {
+    font-size: 20px;
+    font-weight: bold;
+}
+.status {
+    display: flex;
+    flex-direction: row;
+}
+/* Button for New Game */
+button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #FFD700;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #FF8C00;
+}
+
+/* Animation for Game Status */
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
