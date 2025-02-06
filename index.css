@@ -19,6 +19,7 @@ header {
     background-color: #333;
     padding: 20px 0;
     width: 100%;
+    margin-top: -60px;
 }
 
 header h2 {
@@ -144,11 +145,14 @@ button:hover {
         height: 100px;
         width: 100px;
     }
-    .options {
+    /* .options {
         height: 40px;
         width: 80px;
     }
     #color-options {
         padding: 50px;
-    }
+    } */
+     header {
+        margin-top: -100px;
+     }
 }
