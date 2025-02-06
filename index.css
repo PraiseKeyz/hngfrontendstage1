@@ -1,6 +1,6 @@
 /* General Styles */
 body {
-    background-color: rgba(29, 27, 27, 0.877);
+    background-color: rgba(36, 34, 34, 0.877);
     color: #fff;
     font-family: Arial, sans-serif;
     margin: 0;
@@ -9,8 +9,9 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;  /* Stack elements vertically */
-    height: 100vh;
-    overflow: hidden;  /* Prevent scrolling */
+    /* height: 100vh; */
+    /* overflow: hidden; */
+    position: relative;
     text-align: center;
 }
 
@@ -28,10 +29,10 @@ header h2 {
 
 /* Color Box */
 .box {
-    height: 200px;
-    width: 200px;
+    height: 150px;
+    width: 150px;
     border: 5px solid #fff;
-    margin: 0 auto 20px;
+    margin: 20px auto 20px;
     background-color: #ccc; /* Default color */
     transition: background-color 0.3s ease-in-out;
 }
@@ -56,7 +57,7 @@ h2 {
 
 /* Option Buttons */
 .options {
-    height: 90px;
+    height: 50px;
     width: 90px;
     border: 3px solid #fff;
     cursor: pointer;
@@ -75,14 +76,25 @@ p[data-testid="gameStatus"] {
     animation: fadeInOut 1s ease-in-out;
 }
 
-.correct {
-    color: #28A745; /* Green for correct */
+.popup-message {
+    position: absolute;
+    z-index: 1000;
+    background-color: #333;
+    display: none;
+    padding: 30px 30px;
+    border-radius: 10px;
 }
 
-.wrong {
-    color: #E63946; /* Red for wrong */
+.popup-message i {
+    background-color: #0a0a0a;
+    padding: 5px 15px;
+    font-size: 40px;
+    border-radius: 8px;
+    cursor: pointer;
 }
-
+.popup-message i:hover{ 
+    background-color: #202020;
+}
 /* Score Display */
 p[data-testid="score"] {
     font-size: 20px;
@@ -94,20 +106,26 @@ p[data-testid="score"] {
     margin-top: -30px;
     justify-content: space-between;
 }
+.status p span {
+    background-color: #0a0a0a;
+    padding: 5px 8px;
+    border-radius: 5px;
+}
 /* Button for New Game */
 button {
     padding: 10px 20px;
     font-size: 18px;
-    background-color: #FFD700;
+    background-color: rgba(17, 15, 15, 0.877);
     border: none;
     border-radius: 5px;
+    color: #fff;
     cursor: pointer;
     margin-top: 20px;
     transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background-color: #FF8C00;
+    background-color: rgba(39, 34, 34, 0.877);
 }
 
 /* Animation for Game Status */
@@ -120,5 +138,18 @@ button:hover {
     }
     100% {
         opacity: 0;
+    }
+}
+@media (max-width: 450px) {
+    .box {
+        height: 100px;
+        width: 100px;
+    }
+    .options {
+        height: 40px;
+        width: 80px;
+    }
+    #color-options {
+        padding: 50px;
     }
 }

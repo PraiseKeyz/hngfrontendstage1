@@ -25,7 +25,10 @@ const colors = [
 let targetColor;
 const colorBox = document.querySelector('[data-testid="colorBox"]');
 const gameStatus = document.querySelector('[data-testid="gameStatus"]');
-const scoreDisplay = document.querySelector('[data-testid="score"]');
+// const scoreDisplay = document.querySelector('[data-testid="score"]');
+const scoreDisplay = document.getElementById('score');
+const cancel = document.getElementById('cancel-popup');
+const popupMessage = document.getElementById('popup-message');
 let score = 0;
 
 // Function to shuffle colors and ensure the target color is in the options
@@ -46,7 +49,9 @@ function getNewGameState() {
         button.style.backgroundColor = shuffledColors[index].hex;
     });
 }
-
+function handlePopupMessage() {
+    popupMessage.style.display = 'block';
+}
 // Function to handle color click events
 function handleColorClick(e) {
     const clickedButtonColor = rgbToHex(e.target.style.backgroundColor);  // Convert RGB to hex
@@ -55,17 +60,16 @@ function handleColorClick(e) {
         score += 1;
         gameStatus.textContent = 'Correct!';
     } else {
-        gameStatus.textContent = 'Wrong, try again.';
-        score = 0;
-        getNewGameState();
+        gameStatus.textContent = '';
+        handlePopupMessage();
     }
 
-    scoreDisplay.textContent = `Score: ${score}`;
+    scoreDisplay.textContent = `${score}`;
 
     // Reset the game after a guess
     setTimeout(() => {
         getNewGameState();  // Generate a new game state
-    }, 1000);
+    }, 100);
 }
 
 // Initialize the game state
@@ -75,3 +79,16 @@ getNewGameState();  // Start the game with a new target color and options
 document.querySelectorAll('[data-testid="colorOption"]').forEach(button => {
     button.addEventListener('click', handleColorClick);
 });
+
+document.querySelector('[data-testid="newGameButton"]').addEventListener('click', () => {
+    gameStatus.textContent = '';
+    score = 0;
+    getNewGameState();
+    scoreDisplay.textContent = `${score}`;  
+})
+ cancel.addEventListener('click', () => {
+    popupMessage.style.display = 'none';
+    score = 0;
+    getNewGameState();
+    scoreDisplay.textContent = `${score}`;  
+ });

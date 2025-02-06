@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Color Game</title>
     <link rel="stylesheet" href="index.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 <body>
     <header>
         <h2>Color Game</h2>
     </header>
-    
+    <button data-testid="newGameButton">New Game</button>
     <div >
         <div data-testid="colorBox" class="box"></div>
         <h2>Guess the color!!!</h2>
@@ -24,8 +25,13 @@
         </div>
         <div class="status">
             <p data-testid="gameStatus"></p>
-            <p data-testid="score">Score: 0</p>
+            <p data-testid="score">Score: <span id="score">0</span></p>
         </div>
+    </div>
+    <div id="popup-message" class="popup-message">
+        <h4>You picked a wrong answer</h4>
+        <p>Try again</p>
+        <i id="cancel-popup" class="fa-solid fa-times"></i>
     </div>
     <script src="index.js"></script>
 </body>
